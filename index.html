@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gesture FX</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="stage">
+  <video id="video" playsinline muted></video>
+  <canvas id="videoCanvas"></canvas>
+  <canvas id="fxCanvas"></canvas>
+</div>
+
+<div id="topbar">
+  <div class="left">gesture fx <span id="fps"></span></div>
+  <div class="right">
+    <span class="tag"><i>cam</i> <span id="camName">natural</span></span>
+    <span class="tag"><i>box</i> <span id="filterName">cyberpunk</span></span>
+    <span class="sep"></span>
+    <button id="btnCam" title="Next camera filter (G)">cam</button>
+    <button id="btnFilter" title="Next box filter (F)">box</button>
+    <button id="btnClear" title="Clear fog (C)">clear</button>
+    <button id="btnSnap" title="Save photo (P)">photo</button>
+    <button id="btnHelp" title="Show or hide help (H)">?</button>
+  </div>
+</div>
+<div id="pauseTag">paused · click to resume</div>
+
+<div id="chips"></div>
+<div id="toast"></div>
+
+<div id="help">
+  <h3>Gestures</h3>
+  <ul>
+    <li><b>Frame with both hands</b>: spread thumb and index finger on each hand. The shape between your four fingertips gets a filter. Flip one hand to twist it into two triangles.</li>
+    <li><b>Pinch both hands closed</b> while framing (the shape disappears): next box filter. Open your fingers again to see it.</li>
+    <li><b>Snap your fingers</b>: right hand = next camera filter, left hand = previous (watches your fingers first; the mic helps catch fast, blurry snaps)</li>
+    <li><b>Swipe an open hand left to right</b> across the screen: clear everything (fog, writing, camera filter)</li>
+    <li><b>Open your mouth and blow</b> (a "hooo" breath, not talking): fog the screen. The mic listens for the blowing sound; without a mic, an open mouth alone works. It clears itself a few seconds after you stop</li>
+    <li><b>Point one index finger</b> (up or at the camera): write in the fog</li>
+    <li><b>Open palm</b> over the fog: wipe it away like a misted window</li>
+  </ul>
+  <h3>Keys</h3>
+  <p>Click the video or press Space to pause tracking (effects freeze in place) and again to resume.</p>
+  <p>1-9 box filters, F next box filter, G next camera filter, C clear fog, S hand skeleton, P photo, H help</p>
+</div>
+
+<div id="overlay">
+  <div class="card">
+    <h1>Gesture FX</h1>
+    <p>Hand and face tracking effects. Everything runs in your browser; your camera and microphone never leave your device.</p>
+    <button id="btnStart">Start camera</button>
+    <p id="status"></p>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
